@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="615pLxcn6lL.jpg" type="image/icon type">
+  <title>My Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0f0f14;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 8%;
+    }
+
+    .hero-text {
+      max-width: 550px;
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-text h1 span {
+      color: #8b5cf6;
+    }
+
+    .hero-text p {
+      color: #cfcfe6;
+      margin-bottom: 30px;
+      font-size: 1.05rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      border-radius: 30px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
+    }
+
+    .hero-img img {
+      width: 420px;
+      border-radius: 30px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-15px)
+      }
+    }
+
+    section {
+      padding: 100px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #b6b6d6;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    .skill-box {
+      background: #171722;
+      padding: 30px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-8px);
+      background: #1e1e2e;
+    }
+
+    .progress {
+      height: 6px;
+      background: #2a2a3a;
+      border-radius: 10px;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+
+    .progress span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, #8b5cf6, #6366f1);
+      animation: load 2s ease;
+    }
+
+    @keyframes load {
+      from {
+        width: 0
+      }
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: #171722;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-card .content {
+      padding: 20px;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .project-card:hover .overlay {
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #aaa;
+      background: #0b0b10;
+    }
+
+    @media(max-width:900px) {
+      header {
+        flex-direction: column-reverse;
+        text-align: center
+      }
+
+      .hero-img img {
+        width: 300px;
+        margin-bottom: 40px
+      }
+    }
+
+    /* ANIMATIONS */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav
+    style="position:fixed;top:0;left:0;width:100%;background:rgba(15,15,20,0.85);backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:15px 8%;z-index:1000;">
+    <h3 style="font-family:'Playfair Display',serif;">Justin</h3>
+    <div style="display:flex;gap:25px;">
+      <a href="#" style="color:#fff;text-decoration:none;">Home</a>
+      <a href="#skills" style="color:#fff;text-decoration:none;">Skills</a>
+      <a href="#projects" style="color:#fff;text-decoration:none;">Work</a>
+      <a href="#contact" style="color:#fff;text-decoration:none;">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="reveal">
+    <div class="hero-text">
+      <h1>Hi, I'm <span>Justin Jackson</span></h1>
+      <p>Poster Designer & Visual Creative. I design premium Instagram posters, brand creatives and eye‑catching visual
+        designs with a modern aesthetic.</p>
+      <a href="#projects" class="btn">View My Posters</a>
+    </div>
+
+    <div class="hero-img">
+      <div class="overlay"
+        style="position:absolute;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;gap:20px;font-size:1.2rem;opacity:0;transition:0.3s;">
+        ❤️ 120 &nbsp; 👁 View</div>
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="profile">
+      <div style="margin-top:20px; display:flex; gap:15px; justify-content:center;">
+        <a href="https://instagram.com/yourusername" target="_blank" class="btn"
+          style="padding:10px 18px;">Instagram</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" class="btn"
+          style="padding:10px 18px;">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SKILLS -->
+  <section id="skills" class="reveal">
+    <div class="section-title">
+      <h2>My Skills</h2>
+    </div>
+
+    <div class="skills">
+      <div class="skill-box">
+        <h3>MS Office</h3>
+        <p>Word, Excel, PowerPoint (Pro).</p>
+        <div class="progress"><span style="width:70%"></span></div>
+      </div>
+      <div class="skill-box">
+        <h3>UI / UX Design</h3>
+        <p>Beginner – basic layouts & user flow.</p>
+        <div class="progress"><span style="width:60%"></span></div>
+      </div>
+      <div class="skill-box">
+        <h3>Tools</h3>
+        <p>Figma & VS Code.</p>
+        <div class="progress"><span style="width:65%"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="reveal">
+    <div class="section-title">
+      <h2>Projects</h2>
+      <p>Some of my recent works</p>
+    </div>
+
+    <div class="projects">
+      <div class="project-card" style="position:relative;">
+        <div class="overlay"
+          style="position:absolute;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;gap:20px;font-size:1.2rem;opacity:0;transition:0.3s;">
+          ❤️ 120 &nbsp; 👁 View</div>
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" />
+        <div class="content">
+          <h3>Portfolio Website</h3>
+          <p>Modern personal portfolio design.</p>
+        </div>
+      </div>
+      <div class="project-card" style="position:relative;">
+        <div class="overlay"
+          style="position:absolute;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;gap:20px;font-size:1.2rem;opacity:0;transition:0.3s;">
+          ❤️ 120 &nbsp; 👁 View</div>
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" />
+        <div class="content">
+          <h3>Student System Booking For IITM-CSTF</h3>
+          <p>Frontend development using HTML, CSS, and JavaScript.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="reveal">
+    <div class="section-title">
+      <h2>Education</h2>
+      <p>Academic background</p>
+    </div>
+
+    <div class="skills">
+      <div class="skill-box">
+        <h3>School</h3>
+        <p>Government Higher Secondary School<br>2023 – 2024</p>
+      </div>
+      <div class="skill-box">
+        <h3>College</h3>
+        <p>Industrial Training Institute - Ambattur<br>2024 – 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section id="experience" class="reveal">
+    <div class="section-title">
+      <h2>Work Experience</h2>
+    </div>
+
+    <div class="skills">
+      <div class="skill-box">
+        <h3>Indian Institute of Technology Madras</h3>
+        <p>Computer Admin.</p>
+        <p>2 Years Work Experience</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+    <div class="section-title">
+      <h2>Contact Me</h2>
+      <p>Interested in working with me?</p>
+    </div>
+
+    <div style="display:flex;justify-content:center;">
+      <a href="https://forms.gle/EQnwMeLHpTfo6DPw5" target="_blank" class="btn">
+        Contact via Google Form
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Justin Jackson. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll Reveal Animation
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', () => {
+      reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        const height = window.innerHeight;
+        if (top < height - 100) {
+          el.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
